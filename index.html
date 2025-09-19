@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bakery</title>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+
+  <link rel="stylesheet" href="styles.css">
+  <script src = "js\main.js"></script>
+
+  <!--Google Fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Merriweather&display=swap" rel="stylesheet">
+   
+</head>
+
+<body>
+
+    <header>
+        
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+        <h1>My Bakery Delights</h1>
+        <p class="quote">"Baking with love, one sweet treat at a time!"</p>
+
+
+        <!-- Add this to your header, near the hamburger menu -->
+<div class="cart-counter" id="cartCounter">0</div>
+<!-- Cart Modal -->
+<div class="cart-modal" id="cartModal">
+    <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button class="close-cart" id="closeCart">×</button>
+    </div>
+    <div id="cartItems" class="cart-items">
+        <!-- Cart items will appear here -->
+    </div>
+    <div class="cart-footer">
+        <div class="cart-total">
+            <strong>Total: <span id="cartTotal">KSh 0</span></strong>
+        </div>
+        <button class="checkout-btn">Proceed to Checkout</button>
+        <button class="clear-cart-btn" onclick="cart.clearCart()">Clear Cart</button>
+    </div>
+</div>
+
+    </header>
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cakes.html">Cakes</a></li>
+            <li><a href="cupcakes.html">Cupcakes</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+            <li><a href="savory.html">Bread</a></li>
+         
+        </ul>
+    </nav>
+
+</div>
+
+
+    <main>
+        <!--Best Sellers Carousel-->
+<section class="bestsellers">
+    <h2>Best Sellers</h2>
+    <div class="carousel">
+        <div class="track">
+            <div class="card">
+                <figure>
+                    <img src="assets/images/index/bestsellers/Chocolate Chip cookies.jpeg" alt="Chocolate Chip Cookies">
+                    <figcaption>
+                      Chocolate Chip Cookies <br>
+                      <small>Crisp edges, gooey middle — KSh120</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Chocolate Chip Cookies" data-price="120">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/index/bestsellers/red velvet cupckaes.jpeg" alt="Red Velvet Cupcakes">
+                    <figcaption>
+                      Red Velvet Cupcakes <br>
+                      <small>Velvety cocoa & cream cheese swirl — KSh180</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Red Velvet Cupcakes" data-price="180">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/index/bestsellers/cheesecake slices.jpeg" alt="Cheesecake Slices">
+                    <figcaption>
+                      Cheesecake Slices <br>
+                      <small>Silky & rich, perfect for sharing — KSh250</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Cheesecake Slices" data-price="250">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/index/bestsellers/croissants.jpeg" alt="Croissants">
+                    <figcaption>
+                      Croissants <br>
+                      <small>Flaky, buttery layers — KSh220</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Croissants" data-price="220">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/index/bestsellers/fudgy brownies.jpeg" alt="Fudge Brownies">
+                    <figcaption>
+                      Fudge Brownies <br>
+                      <small>Extra chocolate, extra gooey — KSh200</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Fudge Brownies" data-price="200">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/index/bestsellers/sourdough loaf.jpeg" alt="Rustic Sourdough Loaf">
+                    <figcaption>
+                      Rustic Sourdough Loaf <br>
+                      <small>Artisan crust, soft tangy crumb — KSh250</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Rustic Sourdough Loaf" data-price="250">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+    
+                    <!-- Duplicate for infinite scroll effect -->
+                    <!--Best Sellers Carousel-->
+
+            <div class="card">
+                <figure>
+                    <img src="assets/images/index/bestsellers/Chocolate Chip cookies.jpeg" alt="Chocolate Chip Cookies">
+                    <figcaption>
+                      Chocolate Chip Cookies <br>
+                      <small>Crisp edges, gooey middle — KSh120</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Chocolate Chip Cookies" data-price="120">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/index/bestsellers/red velvet cupckaes.jpeg" alt="Red Velvet Cupcakes">
+                    <figcaption>
+                      Red Velvet Cupcakes <br>
+                      <small>Velvety cocoa & cream cheese swirl — KSh180</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Red Velvet Cupcakes" data-price="180">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/index/bestsellers/cheesecake slices.jpeg" alt="Cheesecake Slices">
+                    <figcaption>
+                      Cheesecake Slices <br>
+                      <small>Silky & rich, perfect for sharing — KSh250</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Cheesecake Slices" data-price="250">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/index/bestsellers/croissants.jpeg" alt="Croissants">
+                    <figcaption>
+                      Croissants <br>
+                      <small>Flaky, buttery layers — KSh220</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Croissants" data-price="220">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/index/bestsellers/fudgy brownies.jpeg" alt="Fudge Brownies">
+                    <figcaption>
+                      Fudge Brownies <br>
+                      <small>Extra chocolate, extra gooey — KSh200</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Fudge Brownies" data-price="200">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/index/bestsellers/sourdough loaf.jpeg" alt="Rustic Sourdough Loaf">
+                    <figcaption>
+                      Rustic Sourdough Loaf <br>
+                      <small>Artisan crust, soft tangy crumb — KSh250</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Rustic Sourdough Loaf" data-price="250">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!--New Recipes Carousel-->
+        <section class="newrecipes">
+    <h2>New Recipes</h2>
+    <div class="carousel">
+        <div class="track">
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\new\matcha white chocolate cookies.jpeg" alt="Matcha White Chocolate Cookies">
+                    <figcaption>
+                      Matcha White Chocolate Cookies <br>
+                      <small>Earthy matcha with creamy chunks — KSh170</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Matcha White Chocolate Cookies" data-price="170">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\new\lemon blueberry pound.jpeg" alt="Lemon Blueberry Pound Cake">
+                    <figcaption>
+                      Lemon Blueberry Pound Cake <br>
+                      <small>Zesty & bursting with berries — KSh200</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Lemon Blueberry Pound Cake" data-price="200">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\new\pistachio macarons.jpeg" alt="Pistachio Macarons">
+                    <figcaption>
+                      Pistachio Macarons <br>
+                      <small>Light shells, nutty heart — KSh230</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Pistachio Macarons" data-price="230">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\new\vegan banana bread.jpeg" alt="Vegan Banana Bread">
+                    <figcaption>
+                      Vegan Banana Bread <br>
+                      <small>Moist, wholesome, plant-powered — KSh180</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Vegan Banana Bread" data-price="180">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\new\coffee cake with streussel.jpeg" alt="Coffee Cake with Streusel Topping">
+                    <figcaption>
+                      Coffee Cake with Streusel <br>
+                      <small>Soft cake + crunchy cinnamon top — KSh190</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Coffee Cake with Streusel" data-price="190">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\new\lava cake.jpeg" alt="Mini Chocolate Lava Cakes">
+                    <figcaption>
+                      Mini Chocolate Lava Cakes <br>
+                      <small>Warm, molten centers — KSh210</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Mini Chocolate Lava Cakes" data-price="210">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+
+                    <!-- Duplicate for infinite scroll effect -->
+                              <div class="card">
+                <figure>
+                    <img src="assets\images\index\new\matcha white chocolate cookies.jpeg" alt="Matcha White Chocolate Cookies">
+                    <figcaption>
+                      Matcha White Chocolate Cookies <br>
+                      <small>Earthy matcha with creamy chunks — KSh170</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Matcha White Chocolate Cookies" data-price="170">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\new\lemon blueberry pound.jpeg" alt="Lemon Blueberry Pound Cake">
+                    <figcaption>
+                      Lemon Blueberry Pound Cake <br>
+                      <small>Zesty & bursting with berries — KSh200</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Lemon Blueberry Pound Cake" data-price="200">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\new\pistachio macarons.jpeg" alt="Pistachio Macarons">
+                    <figcaption>
+                      Pistachio Macarons <br>
+                      <small>Light shells, nutty heart — KSh230</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Pistachio Macarons" data-price="230">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\new\vegan banana bread.jpeg" alt="Vegan Banana Bread">
+                    <figcaption>
+                      Vegan Banana Bread <br>
+                      <small>Moist, wholesome, plant-powered — KSh180</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Vegan Banana Bread" data-price="180">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\new\coffee cake with streussel.jpeg" alt="Coffee Cake with Streusel Topping">
+                    <figcaption>
+                      Coffee Cake with Streusel <br>
+                      <small>Soft cake + crunchy cinnamon top — KSh190</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Coffee Cake with Streusel" data-price="190">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\new\lava cake.jpeg" alt="Mini Chocolate Lava Cakes">
+                    <figcaption>
+                      Mini Chocolate Lava Cakes <br>
+                      <small>Warm, molten centers — KSh210</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Mini Chocolate Lava Cakes" data-price="210">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Seasonal Baked Goods Carousel-->
+       <section class="seasonalbakedgoods">
+    <h2>Seasonal Baked Goods</h2>
+    <div class="carousel">
+        <div class="track">
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\seasonal\pumpkin spice muffins.jpeg" alt="Pumpkin Spice Muffins">
+                    <figcaption>
+                      Pumpkin Spice Muffins <br>
+                      <small>Cozy autumn spices — KSh170</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Pumpkin Spice Muffins" data-price="170">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\seasonal\hot cross buns.jpeg" alt="Hot Cross Buns">
+                    <figcaption>
+                      Hot Cross Buns <br>
+                      <small>Soft, lightly spiced Easter treat — KSh150</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Hot Cross Buns" data-price="150">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\seasonal\peppermint brownies.jpeg" alt="Peppermint Bark Brownies">
+                    <figcaption>
+                      Peppermint Bark Brownies <br>
+                      <small>Cool mint & fudgy cocoa — KSh200</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Peppermint Bark Brownies" data-price="200">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\seasonal\mango mousse tart.jpeg" alt="Mango Mousse Tart">
+                    <figcaption>
+                      Mango Mousse Tart <br>
+                      <small>Sunny tropical mousse — KSh230</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Mango Mousse Tart" data-price="230">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\seasonal\apple pie crumble.jpeg" alt="Apple Crumble Pie">
+                    <figcaption>
+                      Apple Crumble Pie <br>
+                      <small>Warm orchard crumble — KSh240</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Apple Crumble Pie" data-price="240">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\seasonal\easter cupcakes.jpeg" alt="Easter Bunny Cupcakes">
+                    <figcaption>
+                      Easter Bunny Cupcakes <br>
+                      <small>Playful pastel frosting — KSh180</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Easter Bunny Cupcakes" data-price="180">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+
+                    <!-- Duplicate for infinite scroll effect -->
+                    <div class="card">
+                <figure>
+                    <img src="assets\images\index\seasonal\pumpkin spice muffins.jpeg" alt="Pumpkin Spice Muffins">
+                    <figcaption>
+                      Pumpkin Spice Muffins <br>
+                      <small>Cozy autumn spices — KSh170</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Pumpkin Spice Muffins" data-price="170">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\seasonal\hot cross buns.jpeg" alt="Hot Cross Buns">
+                    <figcaption>
+                      Hot Cross Buns <br>
+                      <small>Soft, lightly spiced Easter treat — KSh150</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Hot Cross Buns" data-price="150">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\seasonal\peppermint brownies.jpeg" alt="Peppermint Bark Brownies">
+                    <figcaption>
+                      Peppermint Bark Brownies <br>
+                      <small>Cool mint & fudgy cocoa — KSh200</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Peppermint Bark Brownies" data-price="200">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\seasonal\mango mousse tart.jpeg" alt="Mango Mousse Tart">
+                    <figcaption>
+                      Mango Mousse Tart <br>
+                      <small>Sunny tropical mousse — KSh230</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Mango Mousse Tart" data-price="230">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\seasonal\apple pie crumble.jpeg" alt="Apple Crumble Pie">
+                    <figcaption>
+                      Apple Crumble Pie <br>
+                      <small>Warm orchard crumble — KSh240</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Apple Crumble Pie" data-price="240">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\seasonal\easter cupcakes.jpeg" alt="Easter Bunny Cupcakes">
+                    <figcaption>
+                      Easter Bunny Cupcakes <br>
+                      <small>Playful pastel frosting — KSh180</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Easter Bunny Cupcakes" data-price="180">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Popular Recipes Carousel-->
+        <!--Popular Recipes Carousel-->
+<section class="popularrecipes">
+    <h2>Popular Recipes</h2>
+    <div class="carousel">
+        <div class="track">
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\populars\classic vanilla sponge.jpeg" alt="Classic Vanilla Sponge Cake">
+                    <figcaption>
+                      Classic Vanilla Sponge Cake <br>
+                      <small>Soft & airy timeless cake — KSh180</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Classic Vanilla Sponge Cake" data-price="180">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\populars\basic buttercream frosting.jpeg" alt="Basic Buttercream Frosting">
+                    <figcaption>
+                      Basic Buttercream Frosting <br>
+                      <small>Smooth & sweet, perfect topping — KSh120</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Basic Buttercream Frosting" data-price="120">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\populars\nokneadbread.jpeg" alt="Simple No-Knead Bread">
+                    <figcaption>
+                      Simple No-Knead Bread <br>
+                      <small>Rustic crust, easy comfort — KSh200</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Simple No-Knead Bread" data-price="200">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\populars\puff pastry twists.jpeg" alt="Easy Puff Pastry Twists">
+                    <figcaption>
+                      Easy Puff Pastry Twists <br>
+                      <small>Golden, crispy fun — KSh160</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Easy Puff Pastry Twists" data-price="160">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\populars\chocolate ganache drizzle.jpeg" alt="Chocolate Ganache Drizzle">
+                    <figcaption>
+                      Chocolate Ganache Drizzle <br>
+                      <small>Silky cocoa glaze — KSh150</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Chocolate Ganache Drizzle" data-price="150">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\populars\shortbread cookies.jpeg" alt="Shortbread Cookies">
+                    <figcaption>
+                      Shortbread Cookies <br>
+                      <small>Buttery, crumbly perfection — KSh110</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Shortbread Cookies" data-price="110">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+
+                    <!-- Duplicate for infinite scroll effect -->
+                    <div class="card">
+                        <figure>
+                            <img src="assets\images\index\populars\classic vanilla sponge.jpeg" alt="Classic Vanilla Sponge Cake">
+                            <figcaption>
+                              Classic Vanilla Sponge Cake <br>
+                              <small>Soft & airy timeless cake — KSh180</small>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card">
+                        <figure>
+                            <img src="assets\images\index\populars\basic buttercream frosting.jpeg" alt="Basic Buttercream Frosting">
+                            <figcaption>
+                              Basic Buttercream Frosting <br>
+                              <small>Smooth & sweet, perfect topping — KSh120</small>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card">
+                        <figure>
+                            <img src="assets\images\index\populars\nokneadbread.jpeg" alt="Simple No-Knead Bread">
+                            <figcaption>
+                              Simple No-Knead Bread <br>
+                              <small>Rustic crust, easy comfort — KSh200</small>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card">
+                        <figure>
+                            <img src="assets\images\index\populars\puff pastry twists.jpeg" alt="Easy Puff Pastry Twists">
+                            <figcaption>
+                              Easy Puff Pastry Twists <br>
+                              <small>Golden, crispy fun — KSh160</small>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card">
+                        <figure>
+                            <img src="assets\images\index\populars\chocolate ganache drizzle.jpeg" alt="Chocolate Ganache Drizzle">
+                            <figcaption>
+                              Chocolate Ganache Drizzle <br>
+                              <small>Silky cocoa glaze — KSh150</small>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card">
+                        <figure>
+                            <img src="assets\images\index\populars\shortbread cookies.jpeg" alt="Shortbread Cookies">
+                            <figcaption>
+                              Shortbread Cookies <br>
+                              <small>Buttery, crumbly perfection — KSh110</small>
+                            </figcaption>
+                        </figure>
+                    </div><div class="card">
+                <figure>
+                    <img src="assets\images\index\populars\classic vanilla sponge.jpeg" alt="Classic Vanilla Sponge Cake">
+                    <figcaption>
+                      Classic Vanilla Sponge Cake <br>
+                      <small>Soft & airy timeless cake — KSh180</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Classic Vanilla Sponge Cake" data-price="180">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\populars\basic buttercream frosting.jpeg" alt="Basic Buttercream Frosting">
+                    <figcaption>
+                      Basic Buttercream Frosting <br>
+                      <small>Smooth & sweet, perfect topping — KSh120</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Basic Buttercream Frosting" data-price="120">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\populars\nokneadbread.jpeg" alt="Simple No-Knead Bread">
+                    <figcaption>
+                      Simple No-Knead Bread <br>
+                      <small>Rustic crust, easy comfort — KSh200</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Simple No-Knead Bread" data-price="200">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\populars\puff pastry twists.jpeg" alt="Easy Puff Pastry Twists">
+                    <figcaption>
+                      Easy Puff Pastry Twists <br>
+                      <small>Golden, crispy fun — KSh160</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Easy Puff Pastry Twists" data-price="160">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\populars\chocolate ganache drizzle.jpeg" alt="Chocolate Ganache Drizzle">
+                    <figcaption>
+                      Chocolate Ganache Drizzle <br>
+                      <small>Silky cocoa glaze — KSh150</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Chocolate Ganache Drizzle" data-price="150">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\index\populars\shortbread cookies.jpeg" alt="Shortbread Cookies">
+                    <figcaption>
+                      Shortbread Cookies <br>
+                      <small>Buttery, crumbly perfection — KSh110</small>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Shortbread Cookies" data-price="110">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+
+                </div>
+            </div>
+        </section></div></section></div>
+
+        <!--Order form -->
+        <form>
+            <label for="name">Names:</label>
+            <input type="text" id="name" name="name"><br>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address"><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br>
+
+            <label for="phone-number">Phone Number:</label>
+            <input type="tel" id="phone-number" name="phone"><br>
+
+            <label for="order">Order:</label>
+            <input type="text" id="order" name="order"><br>
+
+            <label for="allergies">Allergies (if any):</label>
+            <input type="text" id="allergies" name="allergies"><br>
+
+            <button type="submit">Submit Order</button>
+        </form>
+
+        
+    </main>
+<footer class="social-footer">
+  <a href="https://instagram.com/yourpage" target="_blank">
+    <img src="assets\icons\instagram icon.jpeg" alt="Instagram" class="social-icon">
+  </a>
+  <a href="https://wa.me/yourwhatsappnumber" target="_blank">
+    <img src="assets\icons\whatsapp icon.png" alt="WhatsApp" class="social-icon">
+  </a>
+  <a href="https://tiktok.com/@yourpage" target="_blank">
+    <img src="assets\icons\tiktok icon.png" alt="TikTok" class="social-icon">
+  </a>
+</footer>
+
+
+
+
+</body>
+</html>

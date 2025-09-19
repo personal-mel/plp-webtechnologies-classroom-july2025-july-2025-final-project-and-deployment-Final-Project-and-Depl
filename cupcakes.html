@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bakery</title>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+
+  <link rel="stylesheet" href="styles.css">
+  <script src = "js\main.js"></script>
+
+  <!--Google Fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Merriweather&display=swap" rel="stylesheet">
+   
+</head>
+
+
+
+<body>
+
+<header>
+            <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    <h1>Cupcakes and Muffins</h1>
+    <p>Sweet little bundles of joy</p>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search recipes or items...">
+        </div>
+         <!-- Add this to your header, near the hamburger menu -->
+<div class="cart-counter" id="cartCounter">0</div>
+<!-- Cart Modal -->
+<div class="cart-modal" id="cartModal">
+    <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button class="close-cart" id="closeCart">×</button>
+    </div>
+    <div id="cartItems" class="cart-items">
+        <!-- Cart items will appear here -->
+    </div>
+    <div class="cart-footer">
+        <div class="cart-total">
+            <strong>Total: <span id="cartTotal">KSh 0</span></strong>
+        </div>
+        <button class="checkout-btn">Proceed to Checkout</button>
+        <button class="clear-cart-btn" onclick="cart.clearCart()">Clear Cart</button>
+    </div>
+    </header>
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cakes.html">Cakes</a></li>
+            <li><a href="cupcakes.html">Cupcakes</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+            <li><a href="savory.html">Bread</a></li>
+         
+        </ul>
+    </nav>
+
+<body>
+    <main>
+    <!-- Best Sellers -->
+    <section class="bestsellers">
+        <h2>🥇 BEST SELLERS - KSh 350-450</h2>
+        <div class="carousel">
+            <div class="track">
+                <!-- 7 cards -->
+                <div class="card">
+                    <figure>
+                        <img src="assets/images/cupcakes-muffins/bestsellers/vanilla cupcake.jpeg" alt="Vanilla Cupcakes">
+                        <figcaption>
+                            <strong>Vanilla Cupcakes</strong><br>
+                            <span>"Clouds of sweetness that melt on your tongue!"</span><br>
+                            <span>KSh 350</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Vanilla Cupcakes" data-price="350">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets/images/cupcakes-muffins/bestsellers/red velvet cupckaes.jpeg" alt="Red Velvet Cupcakes">
+                        <figcaption>
+                            <strong>Red Velvet Cupcakes</strong><br>
+                            <span>"Velvet dreams wrapped in cream cheese kisses!"</span><br>
+                            <span>KSh 380</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Red Velvet Cupcakes" data-price="380">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets/images/cupcakes-muffins/bestsellers/bluebeery crumble.jpeg" alt="Blueberry Crumble Muffins">
+                        <figcaption>
+                            <strong>Blueberry Crumble Muffins</strong><br>
+                            <span>"Berry explosion meets buttery heaven!"</span><br>
+                            <span>KSh 320</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Blueberry Crumble Muffins" data-price="320">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets/images/cupcakes-muffins/bestsellers/double chocolate muffins.jpeg" alt="Double Chocolate Muffins">
+                        <figcaption>
+                            <strong>Double Chocolate Muffins</strong><br>
+                            <span>"For when one chocolate just won't do!"</span><br>
+                            <span>KSh 340</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Double Chocolate Muffins" data-price="340">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets/images/cupcakes-muffins/bestsellers/lemon drizzle.jpeg" alt="Lemon Drizzle Cupcakes">
+                        <figcaption>
+                            <strong>Lemon Drizzle Cupcakes</strong><br>
+                            <span>"Zesty sunshine in every buttery bite!"</span><br>
+                            <span>KSh 350</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Lemon Drizzle Cupcakes" data-price="350">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets/images/cupcakes-muffins/bestsellers/chocolate peanut butter.jpeg" alt="Chocolate Peanut Butter Cupcakes">
+                        <figcaption>
+                            <strong>Chocolate Peanut Butter Cupcakes</strong><br>
+                            <span>"Peanut butter's wild chocolate romance!"</span><br>
+                            <span>KSh 380</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Chocolate Peanut Butter Cupcakes" data-price="380">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets/images/cupcakes-muffins/bestsellers/banana nut.jpeg" alt="Banana Nut Muffins">
+                        <figcaption>
+                            <strong>Banana Nut Muffins</strong><br>
+                            <span>"Comfort in every nutty, fruity hug!"</span><br>
+                            <span>KSh 320</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Banana Nut Muffins" data-price="320">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <!-- duplicate of 7 cards -->
+                <div class="card">
+                    <figure>
+                        <img src="assets/images/cupcakes-muffins/bestsellers/vanilla cupcake.jpeg" alt="Vanilla Cupcakes">
+                        <figcaption>
+                            <strong>Vanilla Cupcakes</strong><br>
+                            <span>"Clouds of sweetness that melt on your tongue!"</span><br>
+                            <span>KSh 350</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Vanilla Cupcakes" data-price="350">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets/images/cupcakes-muffins/bestsellers/red velvet cupckaes.jpeg" alt="Red Velvet Cupcakes">
+                        <figcaption>
+                            <strong>Red Velvet Cupcakes</strong><br>
+                            <span>"Velvet dreams wrapped in cream cheese kisses!"</span><br>
+                            <span>KSh 380</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Red Velvet Cupcakes" data-price="380">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets/images/cupcakes-muffins/bestsellers/bluebeery crumble.jpeg" alt="Blueberry Crumble Muffins">
+                        <figcaption>
+                            <strong>Blueberry Crumble Muffins</strong><br>
+                            <span>"Berry explosion meets buttery heaven!"</span><br>
+                            <span>KSh 320</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Blueberry Crumble Muffins" data-price="320">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets/images/cupcakes-muffins/bestsellers/double chocolate muffins.jpeg" alt="Double Chocolate Muffins">
+                        <figcaption>
+                            <strong>Double Chocolate Muffins</strong><br>
+                            <span>"For when one chocolate just won't do!"</span><br>
+                            <span>KSh 340</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Double Chocolate Muffins" data-price="340">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets/images/cupcakes-muffins/bestsellers/lemon drizzle.jpeg" alt="Lemon Drizzle Cupcakes">
+                        <figcaption>
+                            <strong>Lemon Drizzle Cupcakes</strong><br>
+                            <span>"Zesty sunshine in every buttery bite!"</span><br>
+                            <span>KSh 350</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Lemon Drizzle Cupcakes" data-price="350">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets/images/cupcakes-muffins/bestsellers/chocolate peanut butter.jpeg" alt="Chocolate Peanut Butter Cupcakes">
+                        <figcaption>
+                            <strong>Chocolate Peanut Butter Cupcakes</strong><br>
+                            <span>"Peanut butter's wild chocolate romance!"</span><br>
+                            <span>KSh 380</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Chocolate Peanut Butter Cupcakes" data-price="380">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets/images/cupcakes-muffins/bestsellers/banana nut.jpeg" alt="Banana Nut Muffins">
+                        <figcaption>
+                            <strong>Banana Nut Muffins</strong><br>
+                            <span>"Comfort in every nutty, fruity hug!"</span><br>
+                            <span>KSh 320</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Banana Nut Muffins" data-price="320">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Recipes -->
+    <section class="newrecipes">
+        <h2>New Recipes</h2>
+        <div class="carousel">
+            <div class="track">
+                <!-- 7 cards -->
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\new-recipes\matcha white chocolate.jpeg" alt="Matcha White Chocolate">
+                        <figcaption>
+                            <strong>Matcha White Chocolate</strong><br>
+                            <span>"Green tea dreams with white chocolate whispers!"</span><br>
+                            <span>KSh 400</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Matcha White Chocolate" data-price="400">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\new-recipes\chai spice muffins.jpeg" alt="Chai-Spiced Muffins">
+                        <figcaption>
+                            <strong>Chai-Spiced Muffins</strong><br>
+                            <span>"Spice market magic in muffin form!"</span><br>
+                            <span>KSh 380</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Chai-Spiced Muffins" data-price="380">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\new-recipes\rassberry swirl.jpeg" alt="Raspberry Swirl Cupcakes">
+                        <figcaption>
+                            <strong>Raspberry Swirl Cupcakes</strong><br>
+                            <span>"Berry ballet in buttercream tutus!"</span><br>
+                            <span>KSh 420</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Raspberry Swirl Cupcakes" data-price="420">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\new-recipes\mango passion friut.jpeg" alt="Mango Passionfruit Cupcakes">
+                        <figcaption>
+                            <strong>Mango Passionfruit Cupcakes</strong><br>
+                            <span>"Tropical vacation, one bite at a time!"</span><br>
+                            <span>KSh 430</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Mango Passionfruit Cupcakes" data-price="430">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\new-recipes\pistachio rose muffins.jpeg" alt="Pistachio Rose Muffins">
+                        <figcaption>
+                            <strong>Pistachio Rose Muffins</strong><br>
+                            <span>"Persian garden party in your mouth!"</span><br>
+                            <span>KSh 410</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Pistachio Rose Muffins" data-price="410">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\new-recipes\coconut lime cupcakes.jpeg" alt="Coconut Lime Cupcakes">
+                        <figcaption>
+                            <strong>Coconut Lime Cupcakes</strong><br>
+                            <span>"Beachside romance with zesty kisses!"</span><br>
+                            <span>KSh 400</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Coconut Lime Cupcakes" data-price="400">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\new-recipes\peanut bytter&jelly.jpeg" alt="Peanut Butter & Jelly Muffins">
+                        <figcaption>
+                            <strong>Peanut Butter &amp; Jelly Muffins</strong><br>
+                            <span>"Nostalgic lunchbox love, all grown up!"</span><br>
+                            <span>KSh 380</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Peanut Butter & Jelly Muffins" data-price="380">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <!-- duplicate of 7 cards -->
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\new-recipes\matcha white chocolate.jpeg" alt="Matcha White Chocolate">
+                        <figcaption>
+                            <strong>Matcha White Chocolate</strong><br>
+                            <span>"Green tea dreams with white chocolate whispers!"</span><br>
+                            <span>KSh 400</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Matcha White Chocolate" data-price="400">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\new-recipes\chai spice muffins.jpeg" alt="Chai-Spiced Muffins">
+                        <figcaption>
+                            <strong>Chai-Spiced Muffins</strong><br>
+                            <span>"Spice market magic in muffin form!"</span><br>
+                            <span>KSh 380</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Chai-Spiced Muffins" data-price="380">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\new-recipes\rassberry swirl.jpeg" alt="Raspberry Swirl Cupcakes">
+                        <figcaption>
+                            <strong>Raspberry Swirl Cupcakes</strong><br>
+                            <span>"Berry ballet in buttercream tutus!"</span><br>
+                            <span>KSh 420</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Raspberry Swirl Cupcakes" data-price="420">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\new-recipes\mango passion friut.jpeg" alt="Mango Passionfruit Cupcakes">
+                        <figcaption>
+                            <strong>Mango Passionfruit Cupcakes</strong><br>
+                            <span>"Tropical vacation, one bite at a time!"</span><br>
+                            <span>KSh 430</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Mango Passionfruit Cupcakes" data-price="430">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\new-recipes\pistachio rose muffins.jpeg" alt="Pistachio Rose Muffins">
+                        <figcaption>
+                            <strong>Pistachio Rose Muffins</strong><br>
+                            <span>"Persian garden party in your mouth!"</span><br>
+                            <span>KSh 410</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Pistachio Rose Muffins" data-price="410">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\new-recipes\coconut lime cupcakes.jpeg" alt="Coconut Lime Cupcakes">
+                        <figcaption>
+                            <strong>Coconut Lime Cupcakes</strong><br>
+                            <span>"Beachside romance with zesty kisses!"</span><br>
+                            <span>KSh 400</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Coconut Lime Cupcakes" data-price="400">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\new-recipes\peanut bytter&jelly.jpeg" alt="Peanut Butter & Jelly Muffins">
+                        <figcaption>
+                            <strong>Peanut Butter &amp; Jelly Muffins</strong><br>
+                            <span>"Nostalgic lunchbox love, all grown up!"</span><br>
+                            <span>KSh 380</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Peanut Butter & Jelly Muffins" data-price="380">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal Baked Goods -->
+    <section class="seasonalbakedgoods">
+        <h2>Seasonal Baked Goods</h2>
+        <div class="carousel">
+            <div class="track">
+                <!-- 7 cards -->
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\seasonal\pumpkin spice.jpeg" alt="Pumpkin Spice">
+                        <figcaption>
+                            <strong>Pumpkin Spice</strong><br>
+                            <span>"Autumn's warmest hug in cupcake form!"</span><br>
+                            <span>KSh 380</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Pumpkin Spice" data-price="380">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\seasonal\eggnog cupcakes.jpeg" alt="Eggnog Cupcakes">
+                        <figcaption>
+                            <strong>Eggnog Cupcakes</strong><br>
+                            <span>"Holiday cheer, one creamy bite at a time!"</span><br>
+                            <span>KSh 400</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Eggnog Cupcakes" data-price="400">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\seasonal\strawberry shortcake.jpeg" alt="Strawberry Shortcake">
+                        <figcaption>
+                            <strong>Strawberry Shortcake</strong><br>
+                            <span>"Summer's sweetest farewell kiss!"</span><br>
+                            <span>KSh 420</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Strawberry Shortcake" data-price="420">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\seasonal\lemon poppyseed.jpeg" alt="Lemon Poppy Seed Muffins">
+                        <figcaption>
+                            <strong>Lemon Poppy Seed Muffins</strong><br>
+                            <span>"Spring sunshine with crunchy surprises!"</span><br>
+                            <span>KSh 350</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Lemon Poppy Seed Muffins" data-price="350">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\seasonal\apple cider.jpeg" alt="Apple Cider Cupcakes">
+                        <figcaption>
+                            <strong>Apple Cider Cupcakes</strong><br>
+                            <span>"Orchard romance with cinnamon kisses!"</span><br>
+                            <span>KSh 370</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Apple Cider Cupcakes" data-price="370">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\seasonal\caramel apple.jpeg" alt="Caramel Apple Muffins">
+                        <figcaption>
+                            <strong>Caramel Apple Muffins</strong><br>
+                            <span>"Fall fair magic, minus the lines!"</span><br>
+                            <span>KSh 360</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Caramel Apple Muffins" data-price="360">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\seasonal\gingerbread cupcakes.jpeg" alt="Gingerbread Cupcakes">
+                        <figcaption>
+                            <strong>Gingerbread Cupcakes</strong><br>
+                            <span>"Spiced holiday hugs that'll warm your soul!"</span><br>
+                            <span>KSh 390</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Gingerbread Cupcakes" data-price="390">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <!-- duplicate of 7 cards -->
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\seasonal\pumpkin spice.jpeg" alt="Pumpkin Spice">
+                        <figcaption>
+                            <strong>Pumpkin Spice</strong><br>
+                            <span>"Autumn's warmest hug in cupcake form!"</span><br>
+                            <span>KSh 380</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Pumpkin Spice" data-price="380">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\seasonal\eggnog cupcakes.jpeg" alt="Eggnog Cupcakes">
+                        <figcaption>
+                            <strong>Eggnog Cupcakes</strong><br>
+                            <span>"Holiday cheer, one creamy bite at a time!"</span><br>
+                            <span>KSh 400</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Eggnog Cupcakes" data-price="400">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\seasonal\strawberry shortcake.jpeg" alt="Strawberry Shortcake">
+                        <figcaption>
+                            <strong>Strawberry Shortcake</strong><br>
+                            <span>"Summer's sweetest farewell kiss!"</span><br>
+                            <span>KSh 420</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Strawberry Shortcake" data-price="420">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\seasonal\lemon poppyseed.jpeg" alt="Lemon Poppy Seed Muffins">
+                        <figcaption>
+                            <strong>Lemon Poppy Seed Muffins</strong><br>
+                            <span>"Spring sunshine with crunchy surprises!"</span><br>
+                            <span>KSh 350</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Lemon Poppy Seed Muffins" data-price="350">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\seasonal\apple cider.jpeg" alt="Apple Cider Cupcakes">
+                        <figcaption>
+                            <strong>Apple Cider Cupcakes</strong><br>
+                            <span>"Orchard romance with cinnamon kisses!"</span><br>
+                            <span>KSh 370</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Apple Cider Cupcakes" data-price="370">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\seasonal\caramel apple.jpeg" alt="Caramel Apple Muffins">
+                        <figcaption>
+                            <strong>Caramel Apple Muffins</strong><br>
+                            <span>"Fall fair magic, minus the lines!"</span><br>
+                            <span>KSh 360</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Caramel Apple Muffins" data-price="360">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\seasonal\gingerbread cupcakes.jpeg" alt="Gingerbread Cupcakes">
+                        <figcaption>
+                            <strong>Gingerbread Cupcakes</strong><br>
+                            <span>"Spiced holiday hugs that'll warm your soul!"</span><br>
+                            <span>KSh 390</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Gingerbread Cupcakes" data-price="390">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Recipes -->
+    <section class="popularrecipes">
+        <h2>Popular Recipes</h2>
+        <div class="carousel">
+            <div class="track">
+                <!-- 7 cards -->
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\popular\classic chocolate.jpeg" alt="Classic Chocolate">
+                        <figcaption>
+                            <strong>Classic Chocolate</strong><br>
+                            <span>"The one that started it all - pure bliss!"</span><br>
+                            <span>KSh 350</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Classic Chocolate" data-price="350">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\popular\funfetti.jpeg" alt="Funfetti">
+                        <figcaption>
+                            <strong>Funfetti</strong><br>
+                            <span>"Party in every colorful, sprinkly bite!"</span><br>
+                            <span>KSh 360</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Funfetti" data-price="360">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\popular\banana walnit.jpeg" alt="Banana Walnut">
+                        <figcaption>
+                            <strong>Banana Walnut</strong><br>
+                            <span>"Breakfast's sweetest guilty pleasure!"</span><br>
+                            <span>KSh 330</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Banana Walnut" data-price="330">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\popular\mocha cupcake.jpeg" alt="Mocha Cupcakes">
+                        <figcaption>
+                            <strong>Mocha Cupcakes</strong><br>
+                            <span>"Coffee & chocolate's morning romance!"</span><br>
+                            <span>KSh 370</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Mocha Cupcakes" data-price="370">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\popular\vanilla bean.jpeg" alt="Vanilla Bean Cupcakes">
+                        <figcaption>
+                            <strong>Vanilla Bean Cupcakes</strong><br>
+                            <span>"Simple elegance with specks of vanilla magic!"</span><br>
+                            <span>KSh 340</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Vanilla Bean Cupcakes" data-price="340">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\popular\cookies and cream.jpeg" alt="Cookies & Cream Cupcakes">
+                        <figcaption>
+                            <strong>Cookies &amp; Cream Cupcakes</strong><br>
+                            <span>"Oreo dreams come buttercream true!"</span><br>
+                            <span>KSh 380</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Cookies & Cream Cupcakes" data-price="380">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\popular\cinammon streussel.jpeg" alt="Cinnamon Streusel Muffins">
+                        <figcaption>
+                            <strong>Cinnamon Streusel Muffins</strong><br>
+                            <span>"Coffee date's crunchiest companion!"</span><br>
+                            <span>KSh 320</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Cinnamon Streusel Muffins" data-price="320">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <!-- duplicate of 7 cards -->
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\popular\classic chocolate.jpeg" alt="Classic Chocolate">
+                        <figcaption>
+                            <strong>Classic Chocolate</strong><br>
+                            <span>"The one that started it all - pure bliss!"</span><br>
+                            <span>KSh 350</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Classic Chocolate" data-price="350">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\popular\funfetti.jpeg" alt="Funfetti">
+                        <figcaption>
+                            <strong>Funfetti</strong><br>
+                            <span>"Party in every colorful, sprinkly bite!"</span><br>
+                            <span>KSh 360</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Funfetti" data-price="360">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\popular\banana walnit.jpeg" alt="Banana Walnut">
+                        <figcaption>
+                            <strong>Banana Walnut</strong><br>
+                            <span>"Breakfast's sweetest guilty pleasure!"</span><br>
+                            <span>KSh 330</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Banana Walnut" data-price="330">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\popular\mocha cupcake.jpeg" alt="Mocha Cupcakes">
+                        <figcaption>
+                            <strong>Mocha Cupcakes</strong><br>
+                            <span>"Coffee & chocolate's morning romance!"</span><br>
+                            <span>KSh 370</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Mocha Cupcakes" data-price="370">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\popular\vanilla bean.jpeg" alt="Vanilla Bean Cupcakes">
+                        <figcaption>
+                            <strong>Vanilla Bean Cupcakes</strong><br>
+                            <span>"Simple elegance with specks of vanilla magic!"</span><br>
+                            <span>KSh 340</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Vanilla Bean Cupcakes" data-price="340">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\popular\cookies and cream.jpeg" alt="Cookies & Cream Cupcakes">
+                        <figcaption>
+                            <strong>Cookies &amp; Cream Cupcakes</strong><br>
+                            <span>"Oreo dreams come buttercream true!"</span><br>
+                            <span>KSh 380</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Cookies & Cream Cupcakes" data-price="380">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cupcakes-muffins\popular\cinammon streussel.jpeg" alt="Cinnamon Streusel Muffins">
+                        <figcaption>
+                            <strong>Cinnamon Streusel Muffins</strong><br>
+                            <span>"Coffee date's crunchiest companion!"</span><br>
+                            <span>KSh 320</span>
+                        </figcaption>
+                        <button class="add-to-cart" data-name="Cinnamon Streusel Muffins" data-price="320">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+   </main>
+
+    <!-- Order form -->
+    <form>
+        <label for="name">Names:</label>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address"><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+
+        <label for="phone-number">Phone Number:</label>
+        <input type="tel" id="phone-number" name="phone"><br>
+
+        <label for="order">Order:</label>
+        <input type="text" id="order" name="order"><br>
+
+        <label for="allergies">Allergies (if any):</label>
+        <input type="text" id="allergies" name="allergies"><br>
+
+        <button type="submit">Submit Order</button>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bakery</title>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+
+  <link rel="stylesheet" href="styles.css">
+  <script src = "js\main.js"></script>
+
+  <!--Google Fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Merriweather&display=swap" rel="stylesheet">
+   
+</head>
+
+<header>
+            <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    <h1>Cakes</h1>
+    <p>Whipped,fluffy, and made for dreams</p>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search recipes or items...">
+        </div>
+
+         <!-- Add this to your header, near the hamburger menu -->
+<div class="cart-counter" id="cartCounter">0</div>
+<!-- Cart Modal -->
+<div class="cart-modal" id="cartModal">
+    <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button class="close-cart" id="closeCart">×</button>
+    </div>
+    <div id="cartItems" class="cart-items">
+        <!-- Cart items will appear here -->
+    </div>
+    <div class="cart-footer">
+        <div class="cart-total">
+            <strong>Total: <span id="cartTotal">KSh 0</span></strong>
+        </div>
+        <button class="checkout-btn">Proceed to Checkout</button>
+        <button class="clear-cart-btn" onclick="cart.clearCart()">Clear Cart</button>
+    </div>
+    </header>
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cakes.html">Cakes</a></li>
+            <li><a href="cupcakes.html">Cupcakes</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+            <li><a href="savory.html">Bread</a></li>
+         
+        </ul>
+    </nav>
+
+<body>
+    <main>
+       <!-- Best Sellers -->
+<section class="bestsellers">
+    <h2>Best Sellers</h2>
+    <div class="carousel">
+        <div class="track ">
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/bestsellers/cheesecake slices.jpeg" alt="Cheesecake Slices">
+                    <figcaption>
+                        <strong>Cheesecake Slices</strong><br>
+                        <span class="caption">Creamy decadence that sighs with every bite!</span><br>
+                        <span class="price">KSh 450</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Cheesecake Slices" data-price="450">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/bestsellers/carrot cake.jpeg" alt="Carrot Cake">
+                    <figcaption>
+                        <strong>Carrot Cake</strong><br>
+                        <span class="caption">Spice cake's sophisticated country cousin!</span><br>
+                        <span class="price">KSh 420</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Carrot Cake" data-price="420">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/bestsellers/Chocolate fudge cake.jpeg" alt="Chocolate Fudge Cake">
+                    <figcaption>
+                        <strong>Chocolate Fudge Cake</strong><br>
+                        <span class="caption">Death by chocolate, served with a smile!</span><br>
+                        <span class="price">KSh 450</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Chocolate Fudge Cake" data-price="450">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/bestsellers/lemon loaf cake.jpeg" alt="Lemon Loaf">
+                    <figcaption>
+                        <strong>Lemon Loaf</strong><br>
+                        <span class="caption">Sunshine baked into golden perfection!</span><br>
+                        <span class="price">KSh 380</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Lemon Loaf" data-price="380">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/bestsellers/strawberry cream cake.jpeg" alt="Strawberry Cream Cake">
+                    <figcaption>
+                        <strong>Strawberry Cream Cake</strong><br>
+                        <span class="caption">Summer's sweetest love affair!</span><br>
+                        <span class="price">KSh 420</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Strawberry Cream Cake" data-price="420">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/bestsellers/Black forest cake.jpeg" alt="Black Forest Cake">
+                    <figcaption>
+                        <strong>Black Forest Cake</strong><br>
+                        <span class="caption">Chocolate cherry romance in every slice!</span><br>
+                        <span class="price">KSh 450</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Black Forest Cake" data-price="450">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/bestsellers/marble bundt cake.jpeg" alt="Marble Bundt Cake">
+                    <figcaption>
+                        <strong>Marble Bundt Cake</strong><br>
+                        <span class="caption">Vanilla & chocolate's perfect marriage!</span><br>
+                        <span class="price">KSh 400</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Marble Bundt Cake" data-price="400">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <!-- Duplicate for infinite scroll -->
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/bestsellers/cheesecake slices.jpeg" alt="Cheesecake Slices">
+                    <figcaption>
+                        <strong>Cheesecake Slices</strong><br>
+                        <span class="caption">Creamy decadence that sighs with every bite!</span><br>
+                        <span class="price">KSh 450</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Cheesecake Slices" data-price="450">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/bestsellers/carrot cake.jpeg" alt="Carrot Cake">
+                    <figcaption>
+                        <strong>Carrot Cake</strong><br>
+                        <span class="caption">Spice cake's sophisticated country cousin!</span><br>
+                        <span class="price">KSh 420</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Carrot Cake" data-price="420">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/bestsellers/Chocolate fudge cake.jpeg" alt="Chocolate Fudge Cake">
+                    <figcaption>
+                        <strong>Chocolate Fudge Cake</strong><br>
+                        <span class="caption">Death by chocolate, served with a smile!</span><br>
+                        <span class="price">KSh 450</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Chocolate Fudge Cake" data-price="450">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/bestsellers/lemon loaf cake.jpeg" alt="Lemon Loaf">
+                    <figcaption>
+                        <strong>Lemon Loaf</strong><br>
+                        <span class="caption">Sunshine baked into golden perfection!</span><br>
+                        <span class="price">KSh 380</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Lemon Loaf" data-price="380">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/bestsellers/strawberry cream cake.jpeg" alt="Strawberry Cream Cake">
+                    <figcaption>
+                        <strong>Strawberry Cream Cake</strong><br>
+                        <span class="caption">Summer's sweetest love affair!</span><br>
+                        <span class="price">KSh 420</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Strawberry Cream Cake" data-price="420">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/bestsellers/Black forest cake.jpeg" alt="Black Forest Cake">
+                    <figcaption>
+                        <strong>Black Forest Cake</strong><br>
+                        <span class="caption">Chocolate cherry romance in every slice!</span><br>
+                        <span class="price">KSh 450</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Black Forest Cake" data-price="450">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/bestsellers/marble bundt cake.jpeg" alt="Marble Bundt Cake">
+                    <figcaption>
+                        <strong>Marble Bundt Cake</strong><br>
+                        <span class="caption">Vanilla & chocolate's perfect marriage!</span><br>
+                        <span class="price">KSh 400</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Marble Bundt Cake" data-price="400">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- New Recipes -->
+<section class="newrecipes">
+    <h2>New Recipes</h2>
+    <div class="carousel">
+        <div class="track">
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/new-recipes/honey lavendar.jpeg" alt="Honey Lavender">
+                    <figcaption>
+                        <strong>Honey Lavender</strong><br>
+                        <span class="caption">French countryside romance on a plate!</span><br>
+                        <span class="price">KSh 480</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Honey Lavender" data-price="480">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/new-recipes/mango mousse cake.jpeg" alt="Mango Mousse Cake">
+                    <figcaption>
+                        <strong>Mango Mousse Cake</strong><br>
+                        <span class="caption">Tropical cloud that melts your heart!</span><br>
+                        <span class="price">KSh 450</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Mango Mousse Cake" data-price="450">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/new-recipes/tiramisu bread.jpeg" alt="Tiramisu Loaf">
+                    <figcaption>
+                        <strong>Tiramisu Loaf</strong><br>
+                        <span class="caption">Italian seduction, slice by slice!</span><br>
+                        <span class="price">KSh 460</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Tiramisu Loaf" data-price="460">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/new-recipes/alomd ciitrus cake.jpeg" alt="Almond Citrus Cake">
+                    <figcaption>
+                        <strong>Almond Citrus Cake</strong><br>
+                        <span class="caption">Winter sunshine with nutty elegance!</span><br>
+                        <span class="price">KSh 440</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Almond Citrus Cake" data-price="440">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/new-recipes/chocolate beetroot.jpeg" alt="Chocolate Beetroot Cake">
+                    <figcaption>
+                        <strong>Chocolate Beetroot Cake</strong><br>
+                        <span class="caption">Veggie's sexiest chocolate disguise!</span><br>
+                        <span class="price">KSh 420</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Chocolate Beetroot Cake" data-price="420">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/new-recipes/olive oil orange.jpeg" alt="Olive Oil Orange Cake">
+                    <figcaption>
+                        <strong>Olive Oil Orange Cake</strong><br>
+                        <span class="caption">Mediterranean mornings in every bite!</span><br>
+                        <span class="price">KSh 430</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Olive Oil Orange Cake" data-price="430">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/new-recipes/earl grey cake.jpeg" alt="Earl Grey Layer Cake">
+                    <figcaption>
+                        <strong>Earl Grey Layer Cake</strong><br>
+                        <span class="caption">Afternoon tea's most elegant crush!</span><br>
+                        <span class="price">KSh 470</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Earl Grey Layer Cake" data-price="470">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <!-- Duplicate for infinite scroll -->
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/new-recipes/honey lavendar.jpeg" alt="Honey Lavender">
+                    <figcaption>
+                        <strong>Honey Lavender</strong><br>
+                        <span class="caption">French countryside romance on a plate!</span><br>
+                        <span class="price">KSh 480</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Honey Lavender" data-price="480">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/new-recipes/mango mousse cake.jpeg" alt="Mango Mousse Cake">
+                    <figcaption>
+                        <strong>Mango Mousse Cake</strong><br>
+                        <span class="caption">Tropical cloud that melts your heart!</span><br>
+                        <span class="price">KSh 450</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Mango Mousse Cake" data-price="450">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/new-recipes/tiramisu bread.jpeg" alt="Tiramisu Loaf">
+                    <figcaption>
+                        <strong>Tiramisu Loaf</strong><br>
+                        <span class="caption">Italian seduction, slice by slice!</span><br>
+                        <span class="price">KSh 460</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Tiramisu Loaf" data-price="460">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/new-recipes/alomd ciitrus cake.jpeg" alt="Almond Citrus Cake">
+                    <figcaption>
+                        <strong>Almond Citrus Cake</strong><br>
+                        <span class="caption">Winter sunshine with nutty elegance!</span><br>
+                        <span class="price">KSh 440</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Almond Citrus Cake" data-price="440">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/new-recipes/chocolate beetroot.jpeg" alt="Chocolate Beetroot Cake">
+                    <figcaption>
+                        <strong>Chocolate Beetroot Cake</strong><br>
+                        <span class="caption">Veggie's sexiest chocolate disguise!</span><br>
+                        <span class="price">KSh 420</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Chocolate Beetroot Cake" data-price="420">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/new-recipes/olive oil orange.jpeg" alt="Olive Oil Orange Cake">
+                    <figcaption>
+                        <strong>Olive Oil Orange Cake</strong><br>
+                        <span class="caption">Mediterranean mornings in every bite!</span><br>
+                        <span class="price">KSh 430</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Olive Oil Orange Cake" data-price="430">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/new-recipes/earl grey cake.jpeg" alt="Earl Grey Layer Cake">
+                    <figcaption>
+                        <strong>Earl Grey Layer Cake</strong><br>
+                        <span class="caption">Afternoon tea's most elegant crush!</span><br>
+                        <span class="price">KSh 470</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Earl Grey Layer Cake" data-price="470">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seasonal Baked Goods -->
+<section class="seasonalbakedgoods">
+    <h2>Seasonal Baked Goods</h2>
+    <div class="carousel">
+        <div class="track ">
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/seasonal/yule log.jpeg" alt="Black Forest Yule Log">
+                    <figcaption>
+                        <strong>Black Forest Yule Log</strong><br>
+                        <span class="caption">Chocolate cherry romance for the holidays!</span><br>
+                        <span class="price">KSh 450</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Black Forest Yule Log" data-price="450">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/seasonal/cinammon bundt.jpeg" alt="Apple Cinnamon Bundt">
+                    <figcaption>
+                        <strong>Apple Cinnamon Bundt</strong><br>
+                        <span class="caption">Orchard comfort in elegant curves!</span><br>
+                        <span class="price">KSh 420</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Apple Cinnamon Bundt" data-price="420">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/seasonal/peach upside sown cake.jpeg" alt="Peach Upside-Down Cake">
+                    <figcaption>
+                        <strong>Peach Upside-Down Cake</strong><br>
+                        <span class="caption">Southern hospitality, upside down and delicious!</span><br>
+                        <span class="price">KSh 410</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Peach Upside-Down Cake" data-price="410">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/seasonal/eaaster bunny cake.jpeg" alt="Easter Bunny Cake">
+                    <figcaption>
+                        <strong>Easter Bunny Cake</strong><br>
+                        <span class="caption">Hoppin' good times in carrot cake form!</span><br>
+                        <span class="price">KSh 430</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Easter Bunny Cake" data-price="430">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/seasonal/berry chantilly.jpeg" alt="Berry Chantilly">
+                    <figcaption>
+                        <strong>Berry Chantilly</strong><br>
+                        <span class="caption">Summer berries meet creamy French elegance!</span><br>
+                        <span class="price">KSh 440</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Berry Chantilly" data-price="440">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/seasonal/sticky tofee pudding.jpeg" alt="Sticky Toffee Pudding">
+                    <figcaption>
+                        <strong>Sticky Toffee Pudding</strong><br>
+                        <span class="caption">British comfort that sticks to your heart!</span><br>
+                        <span class="price">KSh 400</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Sticky Toffee Pudding" data-price="400">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/seasonal/pumpkin rollcake.jpeg" alt="Pumpkin Roll Cake">
+                    <figcaption>
+                        <strong>Pumpkin Roll Cake</strong><br>
+                        <span class="caption">Autumn's swirled masterpiece!</span><br>
+                        <span class="price">KSh 420</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Pumpkin Roll Cake" data-price="420">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <!-- Duplicate for infinite scroll -->
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/seasonal/yule log.jpeg" alt="Black Forest Yule Log">
+                    <figcaption>
+                        <strong>Black Forest Yule Log</strong><br>
+                        <span class="caption">Chocolate cherry romance for the holidays!</span><br>
+                        <span class="price">KSh 450</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Black Forest Yule Log" data-price="450">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/seasonal/cinammon bundt.jpeg" alt="Apple Cinnamon Bundt">
+                    <figcaption>
+                        <strong>Apple Cinnamon Bundt</strong><br>
+                        <span class="caption">Orchard comfort in elegant curves!</span><br>
+                        <span class="price">KSh 420</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Apple Cinnamon Bundt" data-price="420">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/seasonal/peach upside sown cake.jpeg" alt="Peach Upside-Down Cake">
+                    <figcaption>
+                        <strong>Peach Upside-Down Cake</strong><br>
+                        <span class="caption">Southern hospitality, upside down and delicious!</span><br>
+                        <span class="price">KSh 410</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Peach Upside-Down Cake" data-price="410">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/seasonal/eaaster bunny cake.jpeg" alt="Easter Bunny Cake">
+                    <figcaption>
+                        <strong>Easter Bunny Cake</strong><br>
+                        <span class="caption">Hoppin' good times in carrot cake form!</span><br>
+                        <span class="price">KSh 430</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Easter Bunny Cake" data-price="430">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/seasonal/berry chantilly.jpeg" alt="Berry Chantilly">
+                    <figcaption>
+                        <strong>Berry Chantilly</strong><br>
+                        <span class="caption">Summer berries meet creamy French elegance!</span><br>
+                        <span class="price">KSh 440</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Berry Chantilly" data-price="440">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/seasonal/sticky tofee pudding.jpeg" alt="Sticky Toffee Pudding">
+                    <figcaption>
+                        <strong>Sticky Toffee Pudding</strong><br>
+                        <span class="caption">British comfort that sticks to your heart!</span><br>
+                        <span class="price">KSh 400</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Sticky Toffee Pudding" data-price="400">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/seasonal/pumpkin rollcake.jpeg" alt="Pumpkin Roll Cake">
+                    <figcaption>
+                        <strong>Pumpkin Roll Cake</strong><br>
+                        <span class="caption">Autumn's swirled masterpiece!</span><br>
+                        <span class="price">KSh 420</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Pumpkin Roll Cake" data-price="420">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Popular Recipes -->
+<section class="popularrecipes">
+    <h2>Popular Recipes</h2>
+    <div class="carousel">
+        <div class="track ">
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/popular/vanialla sponge cake.jpeg" alt="Vanilla Sponge">
+                    <figcaption>
+                        <strong>Vanilla Sponge</strong><br>
+                        <span class="caption">Light as air, sweet as memories!</span><br>
+                        <span class="price">KSh 400</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Vanilla Sponge" data-price="400">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/popular/chocolate ganache cake.jpeg" alt="Chocolate Ganache Cake">
+                    <figcaption>
+                        <strong>Chocolate Ganache Cake</strong><br>
+                        <span class="caption">Silky seduction that drips with decadence!</span><br>
+                        <span class="price">KSh 430</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Chocolate Ganache Cake" data-price="430">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/popular/simple butter ncake.jpeg" alt="Simple Butter Cake">
+                    <figcaption>
+                        <strong>Simple Butter Cake</strong><br>
+                        <span class="caption">Grandma's recipe, timeless perfection!</span><br>
+                        <span class="price">KSh 380</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Simple Butter Cake" data-price="380">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/popular/red velvet.jpeg" alt="Red Velvet Layer">
+                    <figcaption>
+                        <strong>Red Velvet Layer</strong><br>
+                        <span class="caption">Southern belle with cream cheese charm!</span><br>
+                        <span class="price">KSh 420</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Red Velvet Layer" data-price="420">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/popular/coffee walnot.jpeg" alt="Coffee Walnut Cake">
+                    <figcaption>
+                        <strong>Coffee Walnut Cake</strong><br>
+                        <span class="caption">Morning coffee's most delicious companion!</span><br>
+                        <span class="price">KSh 410</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Coffee Walnut Cake" data-price="410">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/popular/angel food cake.jpeg" alt="Angel Food Cake">
+                    <figcaption>
+                        <strong>Angel Food Cake</strong><br>
+                        <span class="caption">Heavenly light with strawberry cloud dreams!</span><br>
+                        <span class="price">KSh 390</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Angel Food Cake" data-price="390">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/popular/lemon chiffon vcake.jpeg" alt="Lemon Chiffon Cake">
+                    <figcaption>
+                        <strong>Lemon Chiffon Cake</strong><br>
+                        <span class="caption">Airy citrus sunshine that floats on your tongue!</span><br>
+                        <span class="price">KSh 400</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Lemon Chiffon Cake" data-price="400">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <!-- Duplicate for infinite scroll -->
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/popular/vanialla sponge cake.jpeg" alt="Vanilla Sponge">
+                    <figcaption>
+                        <strong>Vanilla Sponge</strong><br>
+                        <span class="caption">Light as air, sweet as memories!</span><br>
+                        <span class="price">KSh 400</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Vanilla Sponge" data-price="400">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/popular/chocolate ganache cake.jpeg" alt="Chocolate Ganache Cake">
+                    <figcaption>
+                        <strong>Chocolate Ganache Cake</strong><br>
+                        <span class="caption">Silky seduction that drips with decadence!</span><br>
+                        <span class="price">KSh 430</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Chocolate Ganache Cake" data-price="430">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/popular/simple butter ncake.jpeg" alt="Simple Butter Cake">
+                    <figcaption>
+                        <strong>Simple Butter Cake</strong><br>
+                        <span class="caption">Grandma's recipe, timeless perfection!</span><br>
+                        <span class="price">KSh 380</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Simple Butter Cake" data-price="380">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/popular/red velvet.jpeg" alt="Red Velvet Layer">
+                    <figcaption>
+                        <strong>Red Velvet Layer</strong><br>
+                        <span class="caption">Southern belle with cream cheese charm!</span><br>
+                        <span class="price">KSh 420</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Red Velvet Layer" data-price="420">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/popular/coffee walnot.jpeg" alt="Coffee Walnut Cake">
+                    <figcaption>
+                        <strong>Coffee Walnut Cake</strong><br>
+                        <span class="caption">Morning coffee's most delicious companion!</span><br>
+                        <span class="price">KSh 410</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Coffee Walnut Cake" data-price="410">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/popular/angel food cake.jpeg" alt="Angel Food Cake">
+                    <figcaption>
+                        <strong>Angel Food Cake</strong><br>
+                        <span class="caption">Heavenly light with strawberry cloud dreams!</span><br>
+                        <span class="price">KSh 390</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Angel Food Cake" data-price="390">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets/images/cakes/popular/lemon chiffon vcake.jpeg" alt="Lemon Chiffon Cake">
+                    <figcaption>
+                        <strong>Lemon Chiffon Cake</strong><br>
+                        <span class="caption">Airy citrus sunshine that floats on your tongue!</span><br>
+                        <span class="price">KSh 400</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Lemon Chiffon Cake" data-price="400">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <!-- Order form -->
+    <form>
+        <label for="name">Names:</label>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address"><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+
+        <label for="phone-number">Phone Number:</label>
+        <input type="tel" id="phone-number" name="phone"><br>
+
+        <label for="order">Order:</label>
+        <input type="text" id="order" name="order"><br>
+
+        <label for="allergies">Allergies (if any):</label>
+        <input type="text" id="allergies" name="allergies"><br>
+
+        <button type="submit">Submit Order</button>
+    </form>
+
+    </main>
+</body>
+</html>

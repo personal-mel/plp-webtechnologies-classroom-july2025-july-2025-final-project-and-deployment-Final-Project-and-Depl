@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bakery</title>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+
+  <link rel="stylesheet" href="styles.css">
+  <script src = "js\main.js"></script>
+
+  <!--Google Fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Merriweather&display=swap" rel="stylesheet">
+   
+</head>
+
+<header>
+            <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    <h1>Savory baked</h1>
+    <p>Where comfort meets crunch</p>
+             <!-- Add this to your header, near the hamburger menu -->
+<div class="cart-counter" id="cartCounter">0</div>
+<!-- Cart Modal -->
+<div class="cart-modal" id="cartModal">
+    <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button class="close-cart" id="closeCart">×</button>
+    </div>
+    <div id="cartItems" class="cart-items">
+        <!-- Cart items will appear here -->
+    </div>
+    <div class="cart-footer">
+        <div class="cart-total">
+            <strong>Total: <span id="cartTotal">KSh 0</span></strong>
+        </div>
+        <button class="checkout-btn">Proceed to Checkout</button>
+        <button class="clear-cart-btn" onclick="cart.clearCart()">Clear Cart</button>
+    </div>
+
+ 
+</header>
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cakes.html">Cakes</a></li>
+            <li><a href="cupcakes.html">Cupcakes</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+            <li><a href="savory.html">Bread</a></li>
+         
+        </ul>
+    </nav>
+
+<body>
+    <main>
+        <!-- Best Sellers -->
+       <section class="bestsellers">
+    <h2>Best Sellers</h2>
+    <div class="carousel">
+        <div class="track">
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\bestsellers\Mini quiches.jpeg" alt="Mini Quiches">
+                    <figcaption>
+                        Mini Quiches<br>
+                        <span class="caption">"Breakfast's flakiest little secret!"</span><br>
+                        <span class="price">KSh 280</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Mini Quiches" data-price="280">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\bestsellers\sourdough loaf.jpeg" alt="Sourdough Loaf">
+                    <figcaption>
+                        Sourdough Loaf<br>
+                        <span class="caption">"Crust so good, you'll want to marry it!"</span><br>
+                        <span class="price">KSh 350</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Sourdough Loaf" data-price="350">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\bestsellers\ham and cheese.jpeg" alt="Ham & Cheese Croissants">
+                    <figcaption>
+                        Ham & Cheese Croissants<br>
+                        <span class="caption">"Flaky pillows stuffed with happiness!"</span><br>
+                        <span class="price">KSh 320</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Ham & Cheese Croissants" data-price="320">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\bestsellers\garlic knots.jpeg" alt="Garlic Knots">
+                    <figcaption>
+                        Garlic Knots<br>
+                        <span class="caption">"Garlic breath worth every delicious bite!"</span><br>
+                        <span class="price">KSh 250</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Garlic Knots" data-price="250">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\bestsellers\spanish feta pastries.jpeg" alt="Spinach Feta Pastries">
+                    <figcaption>
+                        Spinach Feta Pastries<br>
+                        <span class="caption">"Greek vacation in every buttery bite!"</span><br>
+                        <span class="price">KSh 300</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Spinach Feta Pastries" data-price="300">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\bestsellers\cheddar scones.jpeg" alt="Cheddar Scones">
+                    <figcaption>
+                        Cheddar Scones<br>
+                        <span class="caption">"Cheese lovers' breakfast dream come true!"</span><br>
+                        <span class="price">KSh 280</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Cheddar Scones" data-price="280">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\bestsellers\cheese & herb rolls.jpeg" alt="Cheese & Herb Rolls">
+                    <figcaption>
+                        Cheese & Herb Rolls<br>
+                        <span class="caption">"Herb garden meets cheese heaven!"</span><br>
+                        <span class="price">KSh 260</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Cheese & Herb Rolls" data-price="260">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <!-- Duplicate cards for seamless carousel looping -->
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\bestsellers\Mini quiches.jpeg" alt="Mini Quiches">
+                    <figcaption>
+                        Mini Quiches<br>
+                        <span class="caption">"Breakfast's flakiest little secret!"</span><br>
+                        <span class="price">KSh 280</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Mini Quiches" data-price="280">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\bestsellers\sourdough loaf.jpeg" alt="Sourdough Loaf">
+                    <figcaption>
+                        Sourdough Loaf<br>
+                        <span class="caption">"Crust so good, you'll want to marry it!"</span><br>
+                        <span class="price">KSh 350</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Sourdough Loaf" data-price="350">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\bestsellers\ham and cheese.jpeg" alt="Ham & Cheese Croissants">
+                    <figcaption>
+                        Ham & Cheese Croissants<br>
+                        <span class="caption">"Flaky pillows stuffed with happiness!"</span><br>
+                        <span class="price">KSh 320</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Ham & Cheese Croissants" data-price="320">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\bestsellers\garlic knots.jpeg" alt="Garlic Knots">
+                    <figcaption>
+                        Garlic Knots<br>
+                        <span class="caption">"Garlic breath worth every delicious bite!"</span><br>
+                        <span class="price">KSh 250</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Garlic Knots" data-price="250">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\bestsellers\spanish feta pastries.jpeg" alt="Spinach Feta Pastries">
+                    <figcaption>
+                        Spinach Feta Pastries<br>
+                        <span class="caption">"Greek vacation in every buttery bite!"</span><br>
+                        <span class="price">KSh 300</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Spinach Feta Pastries" data-price="300">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\bestsellers\cheddar scones.jpeg" alt="Cheddar Scones">
+                    <figcaption>
+                        Cheddar Scones<br>
+                        <span class="caption">"Cheese lovers' breakfast dream come true!"</span><br>
+                        <span class="price">KSh 280</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Cheddar Scones" data-price="280">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\bestsellers\cheese & herb rolls.jpeg" alt="Cheese & Herb Rolls">
+                    <figcaption>
+                        Cheese & Herb Rolls<br>
+                        <span class="caption">"Herb garden meets cheese heaven!"</span><br>
+                        <span class="price">KSh 260</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Cheese & Herb Rolls" data-price="260">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- New Recipes -->
+<section class="newrecipes">
+    <h2>New Recipes</h2>
+    <div class="carousel">
+        <div class="track">
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\new-recipes\sun dried tomatoes foccacia.jpeg" alt="Sun-Dried Tomato Focaccia">
+                    <figcaption>
+                        Sun-Dried Tomato Focaccia<br>
+                        <span class="caption">"Italian sunshine baked into bread!"</span><br>
+                        <span class="price">KSh 360</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Sun-Dried Tomato Focaccia" data-price="360">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\new-recipes\caramalized onion tarts.jpeg" alt="Caramelized Onion Tarts">
+                    <figcaption>
+                        Caramelized Onion Tarts<br>
+                        <span class="caption">"Sweet onion seduction in pastry!"</span><br>
+                        <span class="price">KSh 380</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Caramelized Onion Tarts" data-price="380">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\new-recipes\cheddar jalapeno scones.jpeg" alt="Cheddar Jalapeño Scones">
+                    <figcaption>
+                        Cheddar Jalapeño Scones<br>
+                        <span class="caption">"Spicy cheese romance that'll wake you up!"</span><br>
+                        <span class="price">KSh 320</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Cheddar Jalapeño Scones" data-price="320">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\new-recipes\spanish ricotta rolls.jpeg" alt="Spinach Ricotta Rolls">
+                    <figcaption>
+                        Spinach Ricotta Rolls<br>
+                        <span class="caption">"Green goddess meets creamy comfort!"</span><br>
+                        <span class="price">KSh 340</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Spinach Ricotta Rolls" data-price="340">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\new-recipes\rosemary parmesean.jpeg" alt="Rosemary Parmesan Bread">
+                    <figcaption>
+                        Rosemary Parmesan Bread<br>
+                        <span class="caption">"Herb garden's most aromatic love child!"</span><br>
+                        <span class="price">KSh 370</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Rosemary Parmesan Bread" data-price="370">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\new-recipes\mushroom puff pastry.jpeg" alt="Mushroom Puff Squares">
+                    <figcaption>
+                        Mushroom Puff Squares<br>
+                        <span class="caption">"Earthy umami in buttery blankets!"</span><br>
+                        <span class="price">KSh 350</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Mushroom Puff Squares" data-price="350">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\new-recipes\mediterranea flatbread.jpeg" alt="Mediterranean Flatbreads">
+                    <figcaption>
+                        Mediterranean Flatbreads<br>
+                        <span class="caption">"Greek island vacation, no passport needed!"</span><br>
+                        <span class="price">KSh 330</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Mediterranean Flatbreads" data-price="330">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <!-- Duplicate cards for seamless carousel looping -->
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\new-recipes\sun dried tomatoes foccacia.jpeg" alt="Sun-Dried Tomato Focaccia">
+                    <figcaption>
+                        Sun-Dried Tomato Focaccia<br>
+                        <span class="caption">"Italian sunshine baked into bread!"</span><br>
+                        <span class="price">KSh 360</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Sun-Dried Tomato Focaccia" data-price="360">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\new-recipes\caramalized onion tarts.jpeg" alt="Caramelized Onion Tarts">
+                    <figcaption>
+                        Caramelized Onion Tarts<br>
+                        <span class="caption">"Sweet onion seduction in pastry!"</span><br>
+                        <span class="price">KSh 380</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Caramelized Onion Tarts" data-price="380">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\new-recipes\cheddar jalapeno scones.jpeg" alt="Cheddar Jalapeño Scones">
+                    <figcaption>
+                        Cheddar Jalapeño Scones<br>
+                        <span class="caption">"Spicy cheese romance that'll wake you up!"</span><br>
+                        <span class="price">KSh 320</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Cheddar Jalapeño Scones" data-price="320">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\new-recipes\spanish ricotta rolls.jpeg" alt="Spinach Ricotta Rolls">
+                    <figcaption>
+                        Spinach Ricotta Rolls<br>
+                        <span class="caption">"Green goddess meets creamy comfort!"</span><br>
+                        <span class="price">KSh 340</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Spinach Ricotta Rolls" data-price="340">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\new-recipes\rosemary parmesean.jpeg" alt="Rosemary Parmesan Bread">
+                    <figcaption>
+                        Rosemary Parmesan Bread<br>
+                        <span class="caption">"Herb garden's most aromatic love child!"</span><br>
+                        <span class="price">KSh 370</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Rosemary Parmesan Bread" data-price="370">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\new-recipes\mushroom puff pastry.jpeg" alt="Mushroom Puff Squares">
+                    <figcaption>
+                        Mushroom Puff Squares<br>
+                        <span class="caption">"Earthy umami in buttery blankets!"</span><br>
+                        <span class="price">KSh 350</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Mushroom Puff Squares" data-price="350">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\new-recipes\mediterranea flatbread.jpeg" alt="Mediterranean Flatbreads">
+                    <figcaption>
+                        Mediterranean Flatbreads<br>
+                        <span class="caption">"Greek island vacation, no passport needed!"</span><br>
+                        <span class="price">KSh 330</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Mediterranean Flatbreads" data-price="330">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seasonal Baked Goods -->
+<section class="seasonalbakedgoods">
+    <h2>Seasonal Baked Goods</h2>
+    <div class="carousel">
+        <div class="track">
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\seasonal\herbed stuffing.jpeg" alt="Herbed Stuffing Rolls">
+                    <figcaption>
+                        Herbed Stuffing Rolls<br>
+                        <span class="caption">"Thanksgiving's flakiest secret weapon!"</span><br>
+                        <span class="price">KSh 320</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Herbed Stuffing Rolls" data-price="320">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\seasonal\easter cheese bread.jpeg" alt="Easter Cheese Bread">
+                    <figcaption>
+                        Easter Cheese Bread<br>
+                        <span class="caption">"Spring's golden, garlicky celebration!"</span><br>
+                        <span class="price">KSh 340</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Easter Cheese Bread" data-price="340">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\seasonal\galette.jpeg" alt="Tomato Basil Galettes">
+                    <figcaption>
+                        Tomato Basil Galettes<br>
+                        <span class="caption">"Rustic Italian romance on your plate!"</span><br>
+                        <span class="price">KSh 360</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Tomato Basil Galettes" data-price="360">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\seasonal\cranberry brie pull apart.jpeg" alt="Cranberry Brie Pull-Apart">
+                    <figcaption>
+                        Cranberry Brie Pull-Apart<br>
+                        <span class="caption">"Holiday party's cheesiest showstopper!"</span><br>
+                        <span class="price">KSh 380</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Cranberry Brie Pull-Apart" data-price="380">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\seasonal\harvest veggie tarts.jpeg" alt="Harvest Veggie Tarts">
+                    <figcaption>
+                        Harvest Veggie Tarts<br>
+                        <span class="caption">"Autumn's colorful pastry celebration!"</span><br>
+                        <span class="price">KSh 350</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Harvest Veggie Tarts" data-price="350">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\seasonal\zuchinni.jpeg" alt="Zucchini Cheddar Bread">
+                    <figcaption>
+                        Zucchini Cheddar Bread<br>
+                        <span class="caption">"Garden's sneaky, cheesy transformation!"</span><br>
+                        <span class="price">KSh 330</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Zucchini Cheddar Bread" data-price="330">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\seasonal\potato biscuit s.jpeg" alt="Savory Sweet Potato Biscuits">
+                    <figcaption>
+                        Savory Sweet Potato Biscuits<br>
+                        <span class="caption">"Southern soul food meets autumn harvest!"</span><br>
+                        <span class="price">KSh 310</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Savory Sweet Potato Biscuits" data-price="310">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <!-- Duplicate cards for seamless carousel looping -->
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\seasonal\herbed stuffing.jpeg" alt="Herbed Stuffing Rolls">
+                    <figcaption>
+                        Herbed Stuffing Rolls<br>
+                        <span class="caption">"Thanksgiving's flakiest secret weapon!"</span><br>
+                        <span class="price">KSh 320</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Herbed Stuffing Rolls" data-price="320">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\seasonal\easter cheese bread.jpeg" alt="Easter Cheese Bread">
+                    <figcaption>
+                        Easter Cheese Bread<br>
+                        <span class="caption">"Spring's golden, garlicky celebration!"</span><br>
+                        <span class="price">KSh 340</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Easter Cheese Bread" data-price="340">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\seasonal\galette.jpeg" alt="Tomato Basil Galettes">
+                    <figcaption>
+                        Tomato Basil Galettes<br>
+                        <span class="caption">"Rustic Italian romance on your plate!"</span><br>
+                        <span class="price">KSh 360</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Tomato Basil Galettes" data-price="360">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\seasonal\cranberry brie pull apart.jpeg" alt="Cranberry Brie Pull-Apart">
+                    <figcaption>
+                        Cranberry Brie Pull-Apart<br>
+                        <span class="caption">"Holiday party's cheesiest showstopper!"</span><br>
+                        <span class="price">KSh 380</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Cranberry Brie Pull-Apart" data-price="380">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\seasonal\harvest veggie tarts.jpeg" alt="Harvest Veggie Tarts">
+                    <figcaption>
+                        Harvest Veggie Tarts<br>
+                        <span class="caption">"Autumn's colorful pastry celebration!"</span><br>
+                        <span class="price">KSh 350</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Harvest Veggie Tarts" data-price="350">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\seasonal\zuchinni.jpeg" alt="Zucchini Cheddar Bread">
+                    <figcaption>
+                        Zucchini Cheddar Bread<br>
+                        <span class="caption">"Garden's sneaky, cheesy transformation!"</span><br>
+                        <span class="price">KSh 330</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Zucchini Cheddar Bread" data-price="330">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\seasonal\potato biscuit s.jpeg" alt="Savory Sweet Potato Biscuits">
+                    <figcaption>
+                        Savory Sweet Potato Biscuits<br>
+                        <span class="caption">"Southern soul food meets autumn harvest!"</span><br>
+                        <span class="price">KSh 310</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Savory Sweet Potato Biscuits" data-price="310">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Popular Recipes -->
+<section class="popularrecipes">
+    <h2>Popular Recipes</h2>
+    <div class="carousel">
+        <div class="track">
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\popular\puff pastry nutella wraps.jpeg" alt="Puff Pastry Twists">
+                    <figcaption>
+                        Puff Pastry Twists<br>
+                        <span class="caption">"Flaky fingers perfect for cheesy dipping!"</span><br>
+                        <span class="price">KSh 280</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Puff Pastry Twists" data-price="280">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\popular\garlic knots.jpeg" alt="Cheesy Garlic Knots">
+                    <figcaption>
+                        Cheesy Garlic Knots<br>
+                        <span class="caption">"Garlic breath's most delicious consequence!"</span><br>
+                        <span class="price">KSh 260</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Cheesy Garlic Knots" data-price="260">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\popular\no knead bread.jpeg" alt="Rustic No-Knead Bread">
+                    <figcaption>
+                        Rustic No-Knead Bread<br>
+                        <span class="caption">"Artisan quality, peasant effort!"</span><br>
+                        <span class="price">KSh 350</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Rustic No-Knead Bread" data-price="350">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\popular\spinach feta piece.jpeg" alt="Spinach Feta Pie">
+                    <figcaption>
+                        Spinach Feta Pie<br>
+                        <span class="caption">"Greek mama's love in every flaky bite!"</span><br>
+                        <span class="price">KSh 320</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Spinach Feta Pie" data-price="320">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\popular\parmesean biscuit s.jpeg" alt="Parmesan Herb Biscuits">
+                    <figcaption>
+                        Parmesan Herb Biscuits<br>
+                        <span class="caption">"Herb garden's cheesiest fan club!"</span><br>
+                        <span class="price">KSh 290</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Parmesan Herb Biscuits" data-price="290">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\popular\mini sausage rolls.jpeg" alt="Mini Sausage Rolls">
+                    <figcaption>
+                        Mini Sausage Rolls<br>
+                        <span class="caption">"Party's flakiest, meatiest little darlings!"</span><br>
+                        <span class="price">KSh 300</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Mini Sausage Rolls" data-price="300">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\popular\savory scones.jpeg" alt="Savory Scones">
+                    <figcaption>
+                        Savory Scones<br>
+                        <span class="caption">"Breakfast's sophisticated, crumbly soulmate!"</span><br>
+                        <span class="price">KSh 270</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Savory Scones" data-price="270">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <!-- Duplicate cards for seamless carousel looping -->
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\popular\puff pastry nutella wraps.jpeg" alt="Puff Pastry Twists">
+                    <figcaption>
+                        Puff Pastry Twists<br>
+                        <span class="caption">"Flaky fingers perfect for cheesy dipping!"</span><br>
+                        <span class="price">KSh 280</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Puff Pastry Twists" data-price="280">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\popular\garlic knots.jpeg" alt="Cheesy Garlic Knots">
+                    <figcaption>
+                        Cheesy Garlic Knots<br>
+                        <span class="caption">"Garlic breath's most delicious consequence!"</span><br>
+                        <span class="price">KSh 260</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Cheesy Garlic Knots" data-price="260">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\popular\no knead bread.jpeg" alt="Rustic No-Knead Bread">
+                    <figcaption>
+                        Rustic No-Knead Bread<br>
+                        <span class="caption">"Artisan quality, peasant effort!"</span><br>
+                        <span class="price">KSh 350</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Rustic No-Knead Bread" data-price="350">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\popular\spinach feta piece.jpeg" alt="Spinach Feta Pie">
+                    <figcaption>
+                        Spinach Feta Pie<br>
+                        <span class="caption">"Greek mama's love in every flaky bite!"</span><br>
+                        <span class="price">KSh 320</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Spinach Feta Pie" data-price="320">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\popular\parmesean biscuit s.jpeg" alt="Parmesan Herb Biscuits">
+                    <figcaption>
+                        Parmesan Herb Biscuits<br>
+                        <span class="caption">"Herb garden's cheesiest fan club!"</span><br>
+                        <span class="price">KSh 290</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Parmesan Herb Biscuits" data-price="290">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\popular\mini sausage rolls.jpeg" alt="Mini Sausage Rolls">
+                    <figcaption>
+                        Mini Sausage Rolls<br>
+                        <span class="caption">"Party's flakiest, meatiest little darlings!"</span><br>
+                        <span class="price">KSh 300</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Mini Sausage Rolls" data-price="300">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="assets\images\savory-baked\popular\savory scones.jpeg" alt="Savory Scones">
+                    <figcaption>
+                        Savory Scones<br>
+                        <span class="caption">"Breakfast's sophisticated, crumbly soulmate!"</span><br>
+                        <span class="price">KSh 270</span>
+                    </figcaption>
+                    <button class="add-to-cart" data-name="Savory Scones" data-price="270">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <!-- Order form -->
+    <form>
+        <label for="name">Names:</label>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address"><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+
+        <label for="phone-number">Phone Number:</label>
+        <input type="tel" id="phone-number" name="phone"><br>
+
+        <label for="order">Order:</label>
+        <input type="text" id="order" name="order"><br>
+
+        <label for="allergies">Allergies (if any):</label>
+        <input type="text" id="allergies" name="allergies"><br>
+
+        <button type="submit">Submit Order</button>
+    </form>
+
+    </main>
+</body>
+</html></div></div></div>

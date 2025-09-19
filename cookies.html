@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bakery</title>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+
+  <link rel="stylesheet" href="styles.css">
+  <script src = "js\main.js"></script>
+
+  <!--Google Fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Merriweather&display=swap" rel="stylesheet">
+   
+</head>
+
+<header>
+    <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    <h1>Cookies</h1>
+    <p>Sweet little bundles of joy</p>
+
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cakes.html">Cakes</a></li>
+            <li><a href="cupcakes.html">Cupcakes</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+            <li><a href="savory.html">Bread</a></li>
+         
+        </ul>
+    </nav>
+
+<body>
+    <main>
+    <!-- Best Sellers -->
+    <section class="bestsellers">
+        <h2>Best Sellers</h2>
+        <div class="carousel">
+            <div class="track">
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\bestsellers\Chocolate Chip cookies.jpeg" alt="Chocolate Chip">
+                        <figcaption>
+                            <strong>Chocolate Chip</strong><br>
+                            <span class="desc">The OG that never gets old!</span><br>
+                            <span class="price">KSh 250</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\bestsellers\oatmeal raisin.jpeg" alt="Oatmeal Raisin">
+                        <figcaption>
+                            <strong>Oatmeal Raisin</strong><br>
+                            <span class="desc">Chewy hugs with sweet surprises!</span><br>
+                            <span class="price">KSh 220</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\bestsellers\peanut butter blossoms.jpeg" alt="Peanut Butter Blossoms">
+                        <figcaption>
+                            <strong>Peanut Butter Blossoms</strong><br>
+                            <span class="desc">Kissable cookies that steal hearts!</span><br>
+                            <span class="price">KSh 260</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\bestsellers\shortbread.jpeg" alt="Shortbread">
+                        <figcaption>
+                            <strong>Shortbread</strong><br>
+                            <span class="desc">Butter's simplest, most elegant love letter!</span><br>
+                            <span class="price">KSh 200</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\bestsellers\White Choc Macademia.jpeg" alt="White Choc Macadamia">
+                        <figcaption>
+                            <strong>White Choc Macadamia</strong><br>
+                            <span class="desc">Sweet-salty crunch that haunts your dreams!</span><br>
+                            <span class="price">KSh 280</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\bestsellers\molasses cookies.jpeg" alt="Molasses Cookies">
+                        <figcaption>
+                            <strong>Molasses Cookies</strong><br>
+                            <span class="desc">Spiced warmth in every chewy bite!</span><br>
+                            <span class="price">KSh 240</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\bestsellers\salted caramel cookies.jpeg" alt="Salted Caramel Cookies">
+                        <figcaption>
+                            <strong>Salted Caramel Cookies</strong><br>
+                            <span class="desc">Sweet, salty, sticky perfection!</span><br>
+                            <span class="price">KSh 270</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- Duplicate for infinite scroll -->
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\bestsellers\Chocolate Chip cookies.jpeg" alt="Chocolate Chip">
+                        <figcaption>
+                            <strong>Chocolate Chip</strong><br>
+                            <span class="desc">The OG that never gets old!</span><br>
+                            <span class="price">KSh 250</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\bestsellers\oatmeal raisin.jpeg" alt="Oatmeal Raisin">
+                        <figcaption>
+                            <strong>Oatmeal Raisin</strong><br>
+                            <span class="desc">Chewy hugs with sweet surprises!</span><br>
+                            <span class="price">KSh 220</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\bestsellers\peanut butter blossoms.jpeg" alt="Peanut Butter Blossoms">
+                        <figcaption>
+                            <strong>Peanut Butter Blossoms</strong><br>
+                            <span class="desc">Kissable cookies that steal hearts!</span><br>
+                            <span class="price">KSh 260</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\bestsellers\shortbread.jpeg" alt="Shortbread">
+                        <figcaption>
+                            <strong>Shortbread</strong><br>
+                            <span class="desc">Butter's simplest, most elegant love letter!</span><br>
+                            <span class="price">KSh 200</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\bestsellers\White Choc Macademia.jpeg" alt="White Choc Macadamia">
+                        <figcaption>
+                            <strong>White Choc Macadamia</strong><br>
+                            <span class="desc">Sweet-salty crunch that haunts your dreams!</span><br>
+                            <span class="price">KSh 280</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\bestsellers\molasses cookies.jpeg" alt="Molasses Cookies">
+                        <figcaption>
+                            <strong>Molasses Cookies</strong><br>
+                            <span class="desc">Spiced warmth in every chewy bite!</span><br>
+                            <span class="price">KSh 240</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\bestsellers\salted caramel cookies.jpeg" alt="Salted Caramel Cookies">
+                        <figcaption>
+                            <strong>Salted Caramel Cookies</strong><br>
+                            <span class="desc">Sweet, salty, sticky perfection!</span><br>
+                            <span class="price">KSh 270</span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Recipes -->
+    <section class="newrecipes">
+        <h2>New Recipes</h2>
+        <div class="carousel">
+            <div class="track">
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\new-recipes\pistachio cranberry cookies.jpeg" alt="Pistachio Cranberry">
+                        <figcaption>
+                            <strong>Pistachio Cranberry</strong><br>
+                            <span class="desc">Holiday colors with nutty sophistication!</span><br>
+                            <span class="price">KSh 290</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\new-recipes\tahini chocolate.jpeg" alt="Tahini Chocolate Chunk">
+                        <figcaption>
+                            <strong>Tahini Chocolate Chunk</strong><br>
+                            <span class="desc">Middle Eastern seduction meets chocolate!</span><br>
+                            <span class="price">KSh 280</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\new-recipes\espresso almond cookies.jpeg" alt="Espresso Almond Biscotti">
+                        <figcaption>
+                            <strong>Espresso Almond Biscotti</strong><br>
+                            <span class="desc">Coffee break's crunchiest love affair!</span><br>
+                            <span class="price">KSh 270</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\new-recipes\brown butter pecans.jpeg" alt="Brown Butter Pecan">
+                        <figcaption>
+                            <strong>Brown Butter Pecan</strong><br>
+                            <span class="desc">Nutty, buttery, dangerously addictive!</span><br>
+                            <span class="price">KSh 300</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\new-recipes\s'mores cookies.jpeg" alt="S’mores Cookies">
+                        <figcaption>
+                            <strong>S'mores Cookies</strong><br>
+                            <span class="desc">Campfire memories, no tent required!</span><br>
+                            <span class="price">KSh 290</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\new-recipes\white rasberry cookies.jpeg" alt="White Choc Raspberry">
+                        <figcaption>
+                            <strong>White Choc Raspberry</strong><br>
+                            <span class="desc">Tart meets sweet in cookie heaven!</span><br>
+                            <span class="price">KSh 280</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\new-recipes\chcocolate swirl.jpeg" alt="Choco-Hazelnut Swirls">
+                        <figcaption>
+                            <strong>Choco-Hazelnut Swirls</strong><br>
+                            <span class="desc">Nutella's wild chocolate fantasy!</span><br>
+                            <span class="price">KSh 310</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- Duplicate for infinite scroll -->
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\new-recipes\pistachio cranberry cookies.jpeg" alt="Pistachio Cranberry">
+                        <figcaption>
+                            <strong>Pistachio Cranberry</strong><br>
+                            <span class="desc">Holiday colors with nutty sophistication!</span><br>
+                            <span class="price">KSh 290</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\new-recipes\tahini chocolate.jpeg" alt="Tahini Chocolate Chunk">
+                        <figcaption>
+                            <strong>Tahini Chocolate Chunk</strong><br>
+                            <span class="desc">Middle Eastern seduction meets chocolate!</span><br>
+                            <span class="price">KSh 280</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\new-recipes\espresso almond cookies.jpeg" alt="Espresso Almond Biscotti">
+                        <figcaption>
+                            <strong>Espresso Almond Biscotti</strong><br>
+                            <span class="desc">Coffee break's crunchiest love affair!</span><br>
+                            <span class="price">KSh 270</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\new-recipes\brown butter pecans.jpeg" alt="Brown Butter Pecan">
+                        <figcaption>
+                            <strong>Brown Butter Pecan</strong><br>
+                            <span class="desc">Nutty, buttery, dangerously addictive!</span><br>
+                            <span class="price">KSh 300</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\new-recipes\s'mores cookies.jpeg" alt="S’mores Cookies">
+                        <figcaption>
+                            <strong>S'mores Cookies</strong><br>
+                            <span class="desc">Campfire memories, no tent required!</span><br>
+                            <span class="price">KSh 290</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\new-recipes\white rasberry cookies.jpeg" alt="White Choc Raspberry">
+                        <figcaption>
+                            <strong>White Choc Raspberry</strong><br>
+                            <span class="desc">Tart meets sweet in cookie heaven!</span><br>
+                            <span class="price">KSh 280</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\new-recipes\chcocolate swirl.jpeg" alt="Choco-Hazelnut Swirls">
+                        <figcaption>
+                            <strong>Choco-Hazelnut Swirls</strong><br>
+                            <span class="desc">Nutella's wild chocolate fantasy!</span><br>
+                            <span class="price">KSh 310</span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal Baked Goods -->
+    <section class="seasonalbakedgoods">
+        <h2>Seasonal Baked Goods</h2>
+        <div class="carousel">
+            <div class="track">
+            <div class="card">
+                <figure>
+                <img src="assets\images\cookies\seasonal\peppermint bark.jpeg" alt="Peppermint Bark">
+                <figcaption>
+                    <strong>Peppermint Bark</strong><br>
+                    <span class="desc">Winter's crunchiest candy cane crush!</span><br>
+                    <span class="price">KSh 280</span>
+                </figcaption>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                <img src="assets\images\cookies\seasonal\gingerbread cookie.jpeg" alt="Gingerbread Men">
+                <figcaption>
+                    <strong>Gingerbread Men</strong><br>
+                    <span class="desc">Spicy little fellows ready to dance on your tongue!</span><br>
+                    <span class="price">KSh 260</span>
+                </figcaption>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                <img src="assets\images\cookies\seasonal\cherry almond thumbprints.jpeg" alt="Cherry Almond Thumbprints">
+                <figcaption>
+                    <strong>Cherry Almond Thumbprints</strong><br>
+                    <span class="desc">Love bites filled with fruity sweetness!</span><br>
+                    <span class="price">KSh 290</span>
+                </figcaption>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                <img src="assets\images\cookies\seasonal\snowflake sugar cookies.jpeg" alt="Snowflake Sugar Cookies">
+                <figcaption>
+                    <strong>Snowflake Sugar Cookies</strong><br>
+                    <span class="desc">Winter magic, sweet as fresh snow!</span><br>
+                    <span class="price">KSh 240</span>
+                </figcaption>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                <img src="assets\images\cookies\seasonal\maple pecan cookies.jpeg" alt="Maple Pecan Cookies">
+                <figcaption>
+                    <strong>Maple Pecan Cookies</strong><br>
+                    <span class="desc">Autumn leaves and breakfast dreams!</span><br>
+                    <span class="price">KSh 300</span>
+                </figcaption>
+                </figure>
+            </div>
+            <!-- The following card is missing the opening <div class="card"> tag -->
+            <div class="card">
+                <figure>
+                <img src="assets\images\cookies\seasonal\spring butterfly.jpeg" alt="Spring Butterflies">
+                <figcaption>
+                    <strong>Spring Butterflies</strong><br>
+                    <span class="desc">Pastel pretties that flutter with flavor!</span><br>
+                    <span class="price">KSh 250</span>
+                </figcaption>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                <img src="assets\images\cookies\seasonal\spiced orange.jpeg" alt="Spiced Orange Stars">
+                <figcaption>
+                    <strong>Spiced Orange Stars</strong><br>
+                    <span class="desc">Winter night's most aromatic constellation!</span><br>
+                    <span class="price">KSh 270</span>
+                </figcaption>
+                </figure>
+            </div>
+            <!-- Duplicate for infinite scroll -->
+            <div class="card">
+                <figure>
+                <img src="assets\images\cookies\seasonal\peppermint bark.jpeg" alt="Peppermint Bark">
+                <figcaption>
+                    <strong>Peppermint Bark</strong><br>
+                    <span class="desc">Winter's crunchiest candy cane crush!</span><br>
+                    <span class="price">KSh 280</span>
+                </figcaption>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                <img src="assets\images\cookies\seasonal\gingerbread cookie.jpeg" alt="Gingerbread Men">
+                <figcaption>
+                    <strong>Gingerbread Men</strong><br>
+                    <span class="desc">Spicy little fellows ready to dance on your tongue!</span><br>
+                    <span class="price">KSh 260</span>
+                </figcaption>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                <img src="assets\images\cookies\seasonal\cherry almond thumbprints.jpeg" alt="Cherry Almond Thumbprints">
+                <figcaption>
+                    <strong>Cherry Almond Thumbprints</strong><br>
+                    <span class="desc">Love bites filled with fruity sweetness!</span><br>
+                    <span class="price">KSh 290</span>
+                </figcaption>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                <img src="assets\images\cookies\seasonal\snowflake sugar cookies.jpeg" alt="Snowflake Sugar Cookies">
+                <figcaption>
+                    <strong>Snowflake Sugar Cookies</strong><br>
+                    <span class="desc">Winter magic, sweet as fresh snow!</span><br>
+                    <span class="price">KSh 240</span>
+                </figcaption>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                <img src="assets\images\cookies\seasonal\maple pecan cookies.jpeg" alt="Maple Pecan Cookies">
+                <figcaption>
+                    <strong>Maple Pecan Cookies</strong><br>
+                    <span class="desc">Autumn leaves and breakfast dreams!</span><br>
+                    <span class="price">KSh 300</span>
+                </figcaption>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                <img src="assets\images\cookies\seasonal\spring butterfly.jpeg" alt="Spring Butterflies">
+                <figcaption>
+                    <strong>Spring Butterflies</strong><br>
+                    <span class="desc">Pastel pretties that flutter with flavor!</span><br>
+                    <span class="price">KSh 250</span>
+                </figcaption>
+                </figure>
+            </div>
+            <div class="card">
+                <figure>
+                <img src="assets\images\cookies\seasonal\spiced orange.jpeg" alt="Spiced Orange Stars">
+                <figcaption>
+                    <strong>Spiced Orange Stars</strong><br>
+                    <span class="desc">Winter night's most aromatic constellation!</span><br>
+                    <span class="price">KSh 270</span>
+                </figcaption>
+                </figure>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Recipes -->
+    <section class="popularrecipes">
+        <h2>Popular Recipes</h2>
+        <div class="carousel">
+            <div class="track">
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\popular\snickerdoddles.jpeg" alt="Snickerdoodles">
+                        <figcaption>
+                            <strong>Snickerdoodles</strong><br>
+                            <span class="desc">Cinnamon sugar hugs that roll right to your heart!</span><br>
+                            <span class="price">KSh 240</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\popular\triple chocolate cookies.jpeg" alt="Triple Chocolate">
+                        <figcaption>
+                            <strong>Triple Chocolate</strong><br>
+                            <span class="desc">Chocolate overload for the truly devoted!</span><br>
+                            <span class="price">KSh 290</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\popular\coconut macarons.jpeg" alt="Coconut Macaroons">
+                        <figcaption>
+                            <strong>Coconut Macaroons</strong><br>
+                            <span class="desc">Tropical escape in chewy coconut clouds!</span><br>
+                            <span class="price">KSh 260</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\popular\almond sandies.jpeg" alt="Almond Sandies">
+                        <figcaption>
+                            <strong>Almond Sandies</strong><br>
+                            <span class="desc">Nutty crunch with buttery sophistication!</span><br>
+                            <span class="price">KSh 250</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\popular\lemon shortbread.jpeg" alt="Lemon Shortbread">
+                        <figcaption>
+                            <strong>Lemon Shortbread</strong><br>
+                            <span class="desc">Zesty sunshine meets buttery elegance!</span><br>
+                            <span class="price">KSh 230</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\popular\chocolate biscotti.jpeg" alt="Chocolate Dipped Biscotti">
+                        <figcaption>
+                            <strong>Chocolate Dipped Biscotti</strong><br>
+                            <span class="desc">Italian coffee break's chocolatey upgrade!</span><br>
+                            <span class="price">KSh 280</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\popular\sugar cookie.jpeg" alt="Classic Sugar Cookies">
+                        <figcaption>
+                            <strong>Classic Sugar Cookies</strong><br>
+                            <span class="desc">The canvas for all your decorating dreams!</span><br>
+                            <span class="price">KSh 220</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- Duplicate for infinite scroll -->
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\popular\snickerdoddles.jpeg" alt="Snickerdoodles">
+                        <figcaption>
+                            <strong>Snickerdoodles</strong><br>
+                            <span class="desc">Cinnamon sugar hugs that roll right to your heart!</span><br>
+                            <span class="price">KSh 240</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\popular\triple chocolate cookies.jpeg" alt="Triple Chocolate">
+                        <figcaption>
+                            <strong>Triple Chocolate</strong><br>
+                            <span class="desc">Chocolate overload for the truly devoted!</span><br>
+                            <span class="price">KSh 290</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\popular\coconut macarons.jpeg" alt="Coconut Macaroons">
+                        <figcaption>
+                            <strong>Coconut Macaroons</strong><br>
+                            <span class="desc">Tropical escape in chewy coconut clouds!</span><br>
+                            <span class="price">KSh 260</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\popular\almond sandies.jpeg" alt="Almond Sandies">
+                        <figcaption>
+                            <strong>Almond Sandies</strong><br>
+                            <span class="desc">Nutty crunch with buttery sophistication!</span><br>
+                            <span class="price">KSh 250</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\popular\lemon shortbread.jpeg" alt="Lemon Shortbread">
+                        <figcaption>
+                            <strong>Lemon Shortbread</strong><br>
+                            <span class="desc">Zesty sunshine meets buttery elegance!</span><br>
+                            <span class="price">KSh 230</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\popular\chocolate biscotti.jpeg" alt="Chocolate Dipped Biscotti">
+                        <figcaption>
+                            <strong>Chocolate Dipped Biscotti</strong><br>
+                            <span class="desc">Italian coffee break's chocolatey upgrade!</span><br>
+                            <span class="price">KSh 280</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="assets\images\cookies\popular\sugar cookie.jpeg" alt="Classic Sugar Cookies">
+                        <figcaption>
+                            <strong>Classic Sugar Cookies</strong><br>
+                            <span class="desc">The canvas for all your decorating dreams!</span><br>
+                            <span class="price">KSh 220</span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+    <form>
+        <label for="name">Names:</label>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address"><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+
+        <label for="phone-number">Phone Number:</label>
+        <input type="tel" id="phone-number" name="phone"><br>
+
+        <label for="order">Order:</label>
+        <input type="text" id="order" name="order"><br>
+
+        <label for="allergies">Allergies (if any):</label>
+        <input type="text" id="allergies" name="allergies"><br>
+
+        <button type="submit">Submit Order</button>
+    </form>
+
+    </main>
+</body>
+</html>
