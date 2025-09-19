@@ -1,6 +1,8 @@
 # WebDevCapstone Project 
 My Bakery Delight - E-Commerce Website
 A beautiful, responsive bakery website built with vanilla HTML, CSS, and JavaScript. Customers can browse delicious baked goods across multiple categories, add items to a shopping cart, and place orders through an intuitive order form. Features smooth carousels, local storage persistence, and a warm, inviting aesthetic.
+
+Live link : https://my-work-ten-eta.vercel.app/
 ✨ Features
 Core Functionality
 
